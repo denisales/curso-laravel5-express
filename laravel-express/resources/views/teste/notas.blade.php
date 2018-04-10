@@ -8,8 +8,8 @@
     <h1>Anotações</h1>
 
     <ul>
-        <li>Nota 1</li>
-        <li>Nota 2</li>
-        <li>Nota 3...</li>
+        @foreach($notas as $nota)
+            <li>{{ $nota }}</li>
+        @endforeach
     </ul>
 @stop
