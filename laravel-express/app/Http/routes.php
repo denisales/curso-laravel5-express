@@ -11,11 +11,9 @@
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-//url teste, controller TesteController
-Route::get('ola/{nome}', 'TesteController@index');
-Route::get('notas', 'TesteController@notas');
-Route::get('blog', 'PostController@index');
+Route::get('/', 'PostController@index');
+
+Route::get('admin/posts', ['as'=>'admin.posts.index','uses'=>'PostsAdminController@index']);
+Route::get('admin/posts/create', ['as'=>'admin.posts.create','uses'=>'PostsAdminController@create']);
+Route::post('admin/posts/store', ['as'=>'admin.posts.store','uses'=>'PostsAdminController@store']);
